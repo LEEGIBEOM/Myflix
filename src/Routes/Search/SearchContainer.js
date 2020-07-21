@@ -16,6 +16,7 @@ export default class extends Component {
     if (term !== "") {
       this.searchByTerm(term);
     }
+    console.log("This is Search Container.");
   };
 
   searchByTerm = async (term) => {

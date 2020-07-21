@@ -42,6 +42,7 @@ export default class extends Component {
         loading: false,
       });
     }
+    console.log("This is Movie(Home) Container.");
   }
 
   render() {

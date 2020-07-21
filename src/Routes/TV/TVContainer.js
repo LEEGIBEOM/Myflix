@@ -36,7 +36,7 @@ export default class extends Component {
       this.setState({
         loading: false,
       });
-      console.log(this.state);
+      console.log("This is TV Container.");
     }
   }
 
