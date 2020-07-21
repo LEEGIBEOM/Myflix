@@ -9,7 +9,7 @@ import Home from "Routes/Home";
 import TV from "Routes/TV";
 import Search from "Routes/Search";
 import Header from "./Header";
-import Detail from "Routers/Detail";
+import Detail from "Routes/Detail";
 
 export default () => (
   <Router>
