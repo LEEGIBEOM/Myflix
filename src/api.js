@@ -1,22 +1,3 @@
-// import axios from "axios";
-
-// const api_key = "6d111d60c29d38c8fc83c795e61e7e94";
-// const language = "ko-KR";
-// const test = `?api_key=${api_key}&language=${language}`;
-
-// const api = axios.create({
-//   baseURL: "https://api.themoviedb.org/3/",
-//   params: {
-//     api_key: "6d111d60c29d38c8fc83c795e61e7e94",
-//     language: "ko-KR",
-//   },
-// });
-
-// const targetURL = "tv/popular/";
-// api.get(`${targetURL}${test}`);
-
-// export default api;
-
 import axios from "axios";
 
 const api = axios.create({

@@ -7,7 +7,7 @@ export default class extends Component {
     topRated: null,
     popular: null,
     airingToday: null,
-    error: null,
+    error: "",
     loading: true,
   };
 
@@ -36,12 +36,19 @@ export default class extends Component {
       this.setState({
         loading: false,
       });
-      console.log("This is TV Container.");
+      // console.log("This is TV Part.");
     }
   }
 
   render() {
     const { topRated, popular, airingToday, error, loading } = this.state;
+    // console.log(
+    // typeof topRated,
+    // typeof popular,
+    // typeof airingToday,
+    // typeof error,
+    // typeof loading
+    // );
     return (
       <TVPresenter
         topRated={topRated}

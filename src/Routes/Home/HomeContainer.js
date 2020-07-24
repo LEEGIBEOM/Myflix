@@ -8,7 +8,7 @@ export default class extends Component {
     upcomming: null,
     popular: null,
     topRated: null,
-    error: null,
+    error: "",
     loading: true,
   };
 
@@ -42,7 +42,7 @@ export default class extends Component {
         loading: false,
       });
     }
-    console.log("This is Movie(Home) Container.");
+    //console.log("This is Movie(Home) Part.");
   }
 
   render() {
@@ -54,6 +54,15 @@ export default class extends Component {
       error,
       loading,
     } = this.state;
+    // console.log("I'm rendering");
+    // console.log(
+    //   typeof nowPlaying,
+    //   typeof upcomming,
+    //   typeof popular,
+    //   typeof topRated,
+    //   typeof error,
+    //   typeof loading
+    // );
     return (
       <HomePresenter
         nowPlaying={nowPlaying}

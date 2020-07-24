@@ -6,18 +6,30 @@ export default class extends Component {
   state = {
     movieResults: null,
     tvResults: null,
-    term: "hi",
+    term: "good",
     loading: false,
-    error: null,
+    error: "",
   };
+
+  // handleChange = (e) => {
+  // const {
+  // target: { value },
+  // } = e;
+  // this.setState({
+  // term: value,
+  // });
+  // };
 
   handleSubmit = () => {
     const { term } = this.state;
     if (term !== "") {
       this.searchByTerm(term);
     }
-    console.log("This is Search Container.");
   };
+
+  componentDidMount() {
+    this.handleSubmit();
+  }
 
   searchByTerm = async (term) => {
     try {
@@ -41,10 +53,21 @@ export default class extends Component {
         loading: false,
       });
     }
+
+    //console.log("This is Search Part.");
   };
 
   render() {
+    //console.log(this.props);
     const { movieResults, tvResults, term, loading, error } = this.state;
+    // console.log(
+    //   typeof movieResults,
+    //   typeof tvResults,
+    //   typeof term,
+    //   typeof loading,
+    //   typeof error,
+    //   typeof this.handleSubmit
+    // );
     return (
       <SearchPresenter
         movieResults={movieResults}
@@ -52,7 +75,8 @@ export default class extends Component {
         term={term}
         loading={loading}
         error={error}
-        handleSubmit={this.handleSubmit}
+        // handleSubmit={this.handleSubmit}
+        // handleChange={this.handleChange}
       />
     );
   }
