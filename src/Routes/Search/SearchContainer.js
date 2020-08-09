@@ -6,8 +6,8 @@ export default class extends Component {
   state = {
     movieResults: null,
     tvResults: null,
-    term: "good",
-    loading: false,
+    term: "",
+    loading: true,
     error: "",
   };
 
@@ -20,22 +20,27 @@ export default class extends Component {
   // });
   // };
 
-  handleSubmit = () => {
-    const { term } = this.state;
+  // handleSubmit = () => {
+  //   const { term } = this.state;
+  //   if (term !== "") {
+  //     this.searchByTerm(term);
+  //   }
+  // };
+
+  componentDidMount() {
+    // this.handleSubmit();
+    const {
+      match: {
+        params: { q: term },
+      },
+    } = this.props;
     if (term !== "") {
       this.searchByTerm(term);
     }
-  };
-
-  componentDidMount() {
-    this.handleSubmit();
   }
 
   searchByTerm = async (term) => {
     try {
-      this.setState({
-        loading: true,
-      });
       const {
         data: { results: movieResults },
       } = await moviesApi.search(term);
@@ -47,7 +52,8 @@ export default class extends Component {
         movieResults,
         tvResults,
       });
-    } catch {
+    } catch (e) {
+      this.setState({ error: e });
     } finally {
       this.setState({
         loading: false,

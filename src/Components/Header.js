@@ -81,16 +81,19 @@ const Logo = styled.i`
 
 export default withRouter(
   class extends Component {
+    state = { value: "" };
     handleChange = (e) => {
       const {
         target: { value },
       } = e;
+      this.setState({ value });
     };
 
     render() {
       const {
         location: { pathname },
       } = this.props;
+      const { value } = this.state;
       return (
         <Header>
           <List>
@@ -100,21 +103,20 @@ export default withRouter(
                 {/* <Logo alt="icon" /> */}
               </SLink>
             </Item>
-            <Item current={pathname === "/movie"}>
+            <Item current={pathname.includes("/movie")}>
               <SLink to="/movie">영화</SLink>
             </Item>
-            <Item current={pathname === "/tv"}>
+            <Item current={pathname.includes("/tv")}>
               <SLink to="/tv">TV 프로그램</SLink>
             </Item>
             <Blank />
-            <Form action="/search">
+            <Form action={`/search${value ? `/${value}` : ""}`}>
               <Input
                 placeholder="검색어를 입력하시오."
                 onChange={this.handleChange}
                 onSubmit={(e) => e.preventDefault()}
-                name="q"
               />
-              <SLink to="/search">
+              <SLink to={`/search${value ? `/${value}` : ""}`}>
                 <Search />
               </SLink>
             </Form>
