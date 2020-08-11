@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/Myfilx/static/js/main.a4c25d2a.chunk.js",
-    "main.js.map": "/Myfilx/static/js/main.a4c25d2a.chunk.js.map",
-    "runtime-main.js": "/Myfilx/static/js/runtime-main.ff4df1fc.js",
-    "runtime-main.js.map": "/Myfilx/static/js/runtime-main.ff4df1fc.js.map",
-    "static/js/2.52352bb6.chunk.js": "/Myfilx/static/js/2.52352bb6.chunk.js",
-    "static/js/2.52352bb6.chunk.js.map": "/Myfilx/static/js/2.52352bb6.chunk.js.map",
-    "index.html": "/Myfilx/index.html",
-    "precache-manifest.5a520384fd893a1229cf776a1caf86c0.js": "/Myfilx/precache-manifest.5a520384fd893a1229cf776a1caf86c0.js",
-    "service-worker.js": "/Myfilx/service-worker.js",
-    "static/js/2.52352bb6.chunk.js.LICENSE.txt": "/Myfilx/static/js/2.52352bb6.chunk.js.LICENSE.txt",
-    "static/media/noPoster.png": "/Myfilx/static/media/noPoster.ac249eb0.png"
+    "main.js": "/Myflix/static/js/main.a4c25d2a.chunk.js",
+    "main.js.map": "/Myflix/static/js/main.a4c25d2a.chunk.js.map",
+    "runtime-main.js": "/Myflix/static/js/runtime-main.f1c03191.js",
+    "runtime-main.js.map": "/Myflix/static/js/runtime-main.f1c03191.js.map",
+    "static/js/2.8056eed3.chunk.js": "/Myflix/static/js/2.8056eed3.chunk.js",
+    "static/js/2.8056eed3.chunk.js.map": "/Myflix/static/js/2.8056eed3.chunk.js.map",
+    "index.html": "/Myflix/index.html",
+    "precache-manifest.84596a58617ec2b5558fb2fc17a3b02c.js": "/Myflix/precache-manifest.84596a58617ec2b5558fb2fc17a3b02c.js",
+    "service-worker.js": "/Myflix/service-worker.js",
+    "static/js/2.8056eed3.chunk.js.LICENSE.txt": "/Myflix/static/js/2.8056eed3.chunk.js.LICENSE.txt",
+    "static/media/noPoster.png": "/Myflix/static/media/noPoster.ac249eb0.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ff4df1fc.js",
-    "static/js/2.52352bb6.chunk.js",
+    "static/js/runtime-main.f1c03191.js",
+    "static/js/2.8056eed3.chunk.js",
     "static/js/main.a4c25d2a.chunk.js"
   ]
 }
