@@ -73,10 +73,9 @@ const Search = styled(FaSearch)`
   font-size: 14px;
 `;
 
-const Logo = styled.i`
+const Logo = styled.img`
   width: 60px;
   height: 40px;
-  background-color: white;
 `;
 
 export default withRouter(
@@ -99,8 +98,10 @@ export default withRouter(
           <List>
             <Item>
               <SLink to="/">
-                Logo
-                {/* <Logo alt="icon" /> */}
+                <Logo
+                  alt="icon"
+                  src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
+                />
               </SLink>
             </Item>
             <Item current={pathname.includes("/movie")}>

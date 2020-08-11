@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 import Loading from "../../Components/Loading";
 
 const Container = styled.div`
@@ -70,9 +71,17 @@ const Overview = styled.p`
 
 const DetailPresenter = ({ result, error, loading }) =>
   loading ? (
-    <Loading />
+    <>
+      <Helmet>
+        <title>Loading | Myfilx</title>
+      </Helmet>
+      <Loading />
+    </>
   ) : (
     <Container>
+      <Helmet>
+        <title>{result.title ? result.title : result.name} | Myfilx</title>
+      </Helmet>
       <Backdrop
         bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
       />
@@ -85,11 +94,7 @@ const DetailPresenter = ({ result, error, loading }) =>
           }
         />
         <Data>
-          <Title>
-            {result.original_title
-              ? result.original_title
-              : result.original_name}
-          </Title>
+          <Title>{result.title ? result.title : result.name}</Title>
           <InfoContainer>
             <Info>
               {result.release_date
@@ -98,7 +103,10 @@ const DetailPresenter = ({ result, error, loading }) =>
             </Info>
             <Divider>•</Divider>
             <Info>
-              {result.runtime ? result.runtime : result.episode_run_time[0]} 분
+              {result.runtime !== undefined
+                ? result.runtime
+                : result.episode_run_time[0]}{" "}
+              분
             </Info>
             <Divider>•</Divider>
             <Info>

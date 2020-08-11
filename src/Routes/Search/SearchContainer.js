@@ -11,30 +11,14 @@ export default class extends Component {
     error: "",
   };
 
-  // handleChange = (e) => {
-  // const {
-  // target: { value },
-  // } = e;
-  // this.setState({
-  // term: value,
-  // });
-  // };
-
-  // handleSubmit = () => {
-  //   const { term } = this.state;
-  //   if (term !== "") {
-  //     this.searchByTerm(term);
-  //   }
-  // };
-
   componentDidMount() {
-    // this.handleSubmit();
     const {
       match: {
         params: { q: term },
       },
     } = this.props;
     if (term !== "") {
+      this.setState({ term });
       this.searchByTerm(term);
     }
   }
@@ -59,21 +43,11 @@ export default class extends Component {
         loading: false,
       });
     }
-
-    //console.log("This is Search Part.");
   };
 
   render() {
-    //console.log(this.props);
     const { movieResults, tvResults, term, loading, error } = this.state;
-    // console.log(
-    //   typeof movieResults,
-    //   typeof tvResults,
-    //   typeof term,
-    //   typeof loading,
-    //   typeof error,
-    //   typeof this.handleSubmit
-    // );
+
     return (
       <SearchPresenter
         movieResults={movieResults}
@@ -81,8 +55,6 @@ export default class extends Component {
         term={term}
         loading={loading}
         error={error}
-        // handleSubmit={this.handleSubmit}
-        // handleChange={this.handleChange}
       />
     );
   }
