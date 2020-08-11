@@ -41,11 +41,10 @@ export default class extends Component {
         result,
       });
     }
-    console.log("This is Detail Part.");
+    //console.log("This is Detail Part.");
   }
 
   render() {
-    console.log(this.props);
     const { result, error, loading } = this.state;
     // console.log(typeof result, typeof error, typeof loading);
     return <DetailPresenter result={result} error={error} loading={loading} />;

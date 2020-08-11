@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Loading from "../../Components/Loading";
+import Production from "../../Components/Production";
+import Videos from "../../Components/Videos";
+import Seasons from "../../Components/Seasons";
 
 const Container = styled.div`
   height: calc(100vh - 70px);
@@ -21,7 +24,7 @@ const Backdrop = styled.div`
   background-position: center center;
   background-size: cover;
   filter: blur(3px);
-  opacity: 0.5;
+  opacity: 0.3;
   z-index: 0;
 `;
 
@@ -43,12 +46,13 @@ const Cover = styled.div`
 `;
 
 const Data = styled.div`
-  width: 70%;
-  margin-left: 10px;
+  width: 60%;
+  margin-left: 30px;
 `;
 
 const Title = styled.h3`
-  font-size: 32px;
+  font-size: 50px;
+  font-weight: 500;
   margin-bottom: 20px;
 `;
 
@@ -56,17 +60,20 @@ const InfoContainer = styled.div`
   margin: 20px 0;
 `;
 
-const Info = styled.span``;
+const Info = styled.span`
+  opacity: 0.9;
+  font-size: 13px;
+`;
 
 const Divider = styled.span`
   margin: 0 10px;
 `;
 
 const Overview = styled.p`
-  font-size: 12px;
+  font-size: 16px;
   opacity: 0.7;
   line-height: 1.5;
-  width: 70%;
+  width: 90%;
 `;
 
 const DetailPresenter = ({ result, error, loading }) =>
@@ -80,7 +87,16 @@ const DetailPresenter = ({ result, error, loading }) =>
   ) : (
     <Container>
       <Helmet>
-        <title>{result.title ? result.title : result.name} | Myfilx</title>
+        <title>
+          {result.title || result.name
+            ? result.title
+              ? result.title
+              : result.name
+            : result.original_title
+            ? result.original_title
+            : result.original_name}{" "}
+          | Myfilx
+        </title>
       </Helmet>
       <Backdrop
         bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
@@ -94,7 +110,15 @@ const DetailPresenter = ({ result, error, loading }) =>
           }
         />
         <Data>
-          <Title>{result.title ? result.title : result.name}</Title>
+          <Title>
+            {result.title || result.name
+              ? result.title
+                ? result.title
+                : result.name
+              : result.original_title
+              ? result.original_title
+              : result.original_name}
+          </Title>
           <InfoContainer>
             <Info>
               {result.release_date
@@ -117,9 +141,42 @@ const DetailPresenter = ({ result, error, loading }) =>
                     : `${genre.name} / `
                 )}
             </Info>
+            {result.adult && (
+              <>
+                <Divider>•</Divider>
+                <Info>
+                  <span role="img" aria-label="adult">
+                    🔞
+                  </span>
+                  청불
+                </Info>
+              </>
+            )}
+            {result.seasons && result.seasons.length > 0 && (
+              <>
+                <Divider>•</Divider>
+                <Info>{result.seasons[result.seasons.length - 1].name}</Info>
+              </>
+            )}
+            {result.belongs_to_collection && (
+              <>
+                <Divider>•</Divider>
+                <Info>{result.belongs_to_collection.name}</Info>
+              </>
+            )}
           </InfoContainer>
           <Overview>{result.overview}</Overview>
+          <Production
+            companies={result.production_companies}
+            countries={result.production_countries}
+            imdb={result.imdb_id}
+            homepage={result.homepage}
+          />
+          {result.seasons && result.seasons.length > 0 && (
+            <Seasons seasons={result.seasons} />
+          )}
         </Data>
+        <Videos videos={result.videos} />
       </Content>
     </Container>
   );
