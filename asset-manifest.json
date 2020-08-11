@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/Myfilx/static/js/main.6919f45c.chunk.js",
-    "main.js.map": "/Myfilx/static/js/main.6919f45c.chunk.js.map",
+    "main.js": "/Myfilx/static/js/main.a4c25d2a.chunk.js",
+    "main.js.map": "/Myfilx/static/js/main.a4c25d2a.chunk.js.map",
     "runtime-main.js": "/Myfilx/static/js/runtime-main.ff4df1fc.js",
     "runtime-main.js.map": "/Myfilx/static/js/runtime-main.ff4df1fc.js.map",
-    "static/js/2.ecde2acd.chunk.js": "/Myfilx/static/js/2.ecde2acd.chunk.js",
-    "static/js/2.ecde2acd.chunk.js.map": "/Myfilx/static/js/2.ecde2acd.chunk.js.map",
+    "static/js/2.52352bb6.chunk.js": "/Myfilx/static/js/2.52352bb6.chunk.js",
+    "static/js/2.52352bb6.chunk.js.map": "/Myfilx/static/js/2.52352bb6.chunk.js.map",
     "index.html": "/Myfilx/index.html",
-    "precache-manifest.ad911efe60f8922c1e1062fc0d542390.js": "/Myfilx/precache-manifest.ad911efe60f8922c1e1062fc0d542390.js",
+    "precache-manifest.5a520384fd893a1229cf776a1caf86c0.js": "/Myfilx/precache-manifest.5a520384fd893a1229cf776a1caf86c0.js",
     "service-worker.js": "/Myfilx/service-worker.js",
-    "static/js/2.ecde2acd.chunk.js.LICENSE.txt": "/Myfilx/static/js/2.ecde2acd.chunk.js.LICENSE.txt",
+    "static/js/2.52352bb6.chunk.js.LICENSE.txt": "/Myfilx/static/js/2.52352bb6.chunk.js.LICENSE.txt",
     "static/media/noPoster.png": "/Myfilx/static/media/noPoster.ac249eb0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ff4df1fc.js",
-    "static/js/2.ecde2acd.chunk.js",
-    "static/js/main.6919f45c.chunk.js"
+    "static/js/2.52352bb6.chunk.js",
+    "static/js/main.a4c25d2a.chunk.js"
   ]
 }
