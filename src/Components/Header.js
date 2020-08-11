@@ -111,13 +111,13 @@ export default withRouter(
               <SLink to="/tv">TV 프로그램</SLink>
             </Item>
             <Blank />
-            <Form action={`/search${value ? `/${value}` : ""}`}>
+            <Form action={`#/search${value ? `/${value}` : ""}`}>
               <Input
                 placeholder="검색어를 입력하시오."
                 onChange={this.handleChange}
                 onSubmit={(e) => e.preventDefault()}
               />
-              <SLink to={`/search${value ? `/${value}` : ""}`}>
+              <SLink to={`#/search${value ? `/${value}` : ""}`}>
                 <Search />
               </SLink>
             </Form>
